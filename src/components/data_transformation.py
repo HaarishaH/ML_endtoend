@@ -7,7 +7,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import   OneHotEncoder, StandardScaler
 from sklearn.pipeline import Pipeline
-from src.utils import save_object
+from utils import save_object
 
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
