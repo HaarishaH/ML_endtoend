@@ -7,7 +7,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import   OneHotEncoder, StandardScaler
 from sklearn.pipeline import Pipeline
-from utils import save_object
+from src.utils import save_object
 
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -36,9 +36,8 @@ class DataTransformataion:
             )
             cat_pipeline = Pipeline(
                 steps = [
-                    ('imputer',SimpleImputer(strategy='median')),
-                    ('one_hot_encoder',OneHotEncoder()),
-                    ('scaler',StandardScaler())
+                    ('imputer',SimpleImputer(strategy='most_frequent')),
+                    ('one_hot_encoder',OneHotEncoder())
 
                 ]
             )
